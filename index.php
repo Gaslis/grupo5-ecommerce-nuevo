@@ -8,7 +8,7 @@
           <?php include("header.php");?>
 
           <!-- Carrusel de imagenes -->
-      <section class="carouselMedia">
+      <section class="carouselMedia posi">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner alturaBanner bordeRedondo">
             <div class="carousel-item active">
