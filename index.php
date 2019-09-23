@@ -1,3 +1,76 @@
+<?php
+
+$elArray=[
+
+				0 => [
+                'id' => 1,
+
+                'titulo' => "Nombre del Producto",
+
+                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+                'imagen' => 'img/pen2.png',
+              ],
+
+        1 => [
+
+                'id' => 2,
+
+                'titulo' => "Nombre del Producto",
+
+                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+                'imagen' => 'img/pen3.png',
+
+              ],
+          2 => [
+
+                'id' => 3,
+
+                'titulo' => "Nombre del Producto",
+
+                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+                'imagen' => 'img/pen.png',
+
+              ],
+					3 => [
+
+								'id' => 1,
+
+								'titulo' => "Nombre del Producto",
+
+								'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+								'imagen' => 'img/pen2.png',
+
+							],
+
+					4 => [
+
+								'id' => 2,
+
+								'titulo' => "Nombre del Producto",
+
+								'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+								'imagen' => 'img/pen3.png',
+
+										],
+					5 => [
+
+								'id' => 3,
+
+								'titulo' => "Nombre del Producto",
+
+								'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+								'imagen' => 'img/pen.png',
+
+								]
+];
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <?php include("recursos/head.php");?>
@@ -68,79 +141,24 @@
 <!-- Productos a la venta -->
           <section class="col-12 col-sm-12 col-md-9">
             <div class="row">
-              <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                <img src="img/pen.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                <img src="img/pen2.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                <img src="img/pen3.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
+              <?php foreach ($elArray as $numArticulo => $articulos) :?>
                 <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                  <img src="img/pen.png" class="card-img-top" alt="...">
+                  <img src="<?=$articulos['imagen'];?>" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title"><?=$articulos['titulo'];?></h5>
+                    <p class="card-text"><?=$articulos['descripcion'];?></p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>
-                <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                  <img src="img/pen2.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-                <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                  <img src="img/pen3.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-                <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                  <img src="img/pen.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-                <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
-                  <img src="img/pen2.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-            </section>
+              <?php endforeach; ?>
+            </div>
+          </section>
 
 <!-- segundo banner -->
         <section>
 
         </section>
       </main>
-
 
       <?php include("recursos/footer.php"); ?>
     </div>
