@@ -1,8 +1,12 @@
 <?php
+function placeholderLogin(){
+
+}
+
 
 function validarPass()
 {
-if(strlen($_POST["password"])==0 && strlen($_POST["confirmar"])==0)
+if(strlen($_POST["password"])===0 && strlen($_POST["confirmar"])===0)
 {
   $resultado="Los dos campos de contraseña estan vacios";
 }
@@ -25,10 +29,10 @@ if(strlen($_POST["password"])==0 && strlen($_POST["confirmar"])==0)
   return $resultado;
 }
 
-function subirUsuario($usuario) {
+function subirUsuario($usuarioFunc) {
 $usuarioJson = file_get_contents("usuarios.json");
 $usuarioJsonArray=json_decode($usuarioJson, true);
-$usuarioJson[]=$usuario;
+$usuarioJson[]=$usuarioFunc;
 $usuariosFinal =json_encode($usuarioJsonArray, JSON_PRETTY_PRINT);
 file_put_contents("usuarios.json",$usuariosFinal);
 }

@@ -77,7 +77,7 @@ $elArray=[
   <body>
     <div class="contaniner-fluid">
         <div class="row">
-					
+
 <!-- barra de navegacion -->
           <?php include("recursos/header.php");?>
 
@@ -86,13 +86,13 @@ $elArray=[
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner alturaBanner bordeRedondo">
             <div class="carousel-item active">
-              <img src="img/banner-fino1.png" class="d-block w-100" alt="...">
+              <img src="img/banner-fino1.png" class="d-block w-100 h-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="img/banner-ar-nuevos-brazaletes-T407-T433.jpg" class="d-block w-100" alt="...">
+              <img src="img/banner-ar-nuevos-brazaletes-T407-T433.jpg" class="d-block w-100 h-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="img/banner-ar-T468-T476.jpg" class="d-block w-100" alt="...">
+              <img src="img/banner-ar-T468-T476.jpg" class="d-block w-100 h-100" alt="...">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

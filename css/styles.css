@@ -22,8 +22,8 @@ header{
 }
 /* Comienzo BarraRoja */
 .barraRoja{
-	background-color: rgba(255, 255, 255, 0);
-	/* rgb(203, 26, 26); */
+	background-color: black;
+	/* rgb(203, 26, 26); rgba(255, 255, 255, 0)*/
 	line-height: 24px;
 	font-weight: 500;
 }
@@ -47,15 +47,16 @@ div nav.segundoNav a,
 div nav.primerNav a
 {
 	text-decoration: none;
-	color: #ea3030;
+	color: white;
+	/* #ea3030; */
 	padding: 15px;
 	font-size: 14px;
 }
 div nav.primerNav a:hover{
-	color: white;
+	color: #ea3030;
 }
 div nav.segundoNav a:hover{
-	color: white;
+	color: #ea3030;
 }
 .alturaBanner{
   height: 450px;
@@ -193,15 +194,20 @@ footer section article a:hover{
 	margin-left: 43%; /* revisar margin left */
 }
 .limitesFormu{
+	margin-top: 3%;
 	margin-left: 15%;
 	margin-right: 15%;
 }
-
-.fondoRegistrate{
+.fondoRegistrate,
+.fondoLogin{
 	background-color: #eaeaea;
 	border-radius: 10px;
 }
-
+.limitesLogin{
+	margin-top: 3%;
+	margin-left: 30%;
+	margin-right: 30%;
+}
 /* .cardPadre{
 	position: relative;
 }
