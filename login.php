@@ -14,7 +14,7 @@ if($_POST){
     // var_dump($_POST);
     header('location: index.php');
   }else{
-    $mensajeError='Alguno de los campos es incorrecto.'
+    $mensajeError='Alguno de los campos es incorrecto.';
     return $mensajeError;
   }
 }

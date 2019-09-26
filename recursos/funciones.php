@@ -88,7 +88,7 @@ function buscarPassEnJson() {
   $usuarios = file_get_contents("recursos/usuarios.json");
   $usuariosArray=json_decode($usuarios, true);
   foreach($usuariosArray as $usuario){
-    if(password_verify($_POST['password'],$usuario['password']){
+    if(password_verify($_POST['password'],$usuario['password'])){
       return true;
     }
   }
