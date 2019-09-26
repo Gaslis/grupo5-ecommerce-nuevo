@@ -1,19 +1,24 @@
 <?PHP
 session_start();
-$placeholder="Ponga su email";
+require ("recursos/funciones.php");
+// $ejemplo=[
+//   "email" => 'gfl@gmail.com',
+//   "password" =>'12345678'
+// ];
 if($_POST){
-  if($_POST['email']===$email && $_POST['password']===$pass){
-    $_SESSION['user']=[
-      'email'=>$email
-    ];
-    // header('location: index.php');
-  }else {
-    $placeholder="Este campo esta mal";
-    // decir que hay algo mal en el placeholder en rojo
+  // if(comparaInfo($_POST['email'],$ejemplo['email'])
+  // &&comparaInfo($_POST['password'],$ejemplo['password']))
+  if(buscarPorCampoEnJson('email') && buscarPassEnJson())
+  {
+    $_SESSION=$_POST;
+    // var_dump($_POST);
+    header('location: index.php');
+  }else{
+    $mensajeError='Alguno de los campos es incorrecto.'
+    return $mensajeError;
   }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -27,15 +32,16 @@ if($_POST){
 <!-- Login -->
         <section class="limitesLogin fondoLogin p-5">
           <h1 class="h1-faq">INGRESAR</h1>
-          <form>
-            <div class="form-group " method='post'>
+          <form method='post'>
+            <div class="form-group " >
               <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo $placeholder;?>">
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=
+              "<?php echo $placeholder;?>">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -25,8 +25,8 @@ function comparaInfo($primerDato,$segundoDato){
 }
 
 // Recibe el campo y numero de caracteres minimo se fija si esta vacio o si es menor a $numCaracter
-// Si esta bien almacena el campo en usuarios
-// Si esta mal informa el error mediante el $placeCampo
+// Si esta bien, retorna $_POST[$Campo]
+// Si esta mal informa el error mediante $placeCampo
 function validaCampoNomOapellido($Campo,$numCaracter){
   if(minimoCaracteres($_POST[$Campo],$numCaracter)&& estaVacio($_POST[$Campo])!=true){
     return $_POST[$Campo];
@@ -67,12 +67,30 @@ function validarPass(){
   }
 }
 
-
 function subirUsuario($usuarioFunc) {
-$usuarioJson = file_get_contents("usuarios.json");
-$usuarioJsonArray=json_decode($usuarioJson, true);
-$usuarioJson[]=$usuarioFunc;
-$usuariosFinal =json_encode($usuarioJsonArray, JSON_PRETTY_PRINT);
-file_put_contents("usuarios.json",$usuariosFinal);
+  $usuarioJson = file_get_contents("recursos/usuarios.json");
+  $usuarioJsonArray=json_decode($usuarioJson, true);
+  $usuarioJson[]=$usuarioFunc;
+  $usuariosFinal =json_encode($usuarioJsonArray, JSON_PRETTY_PRINT);
+  file_put_contents("usuarios.json",$usuariosFinal);
+}
+
+function buscarPorCampoEnJson($camp) {
+  $usuarios = file_get_contents("recursos/usuarios.json");
+  $usuariosArray=json_decode($usuarios, true);
+  foreach($usuariosArray as $usuario){
+    if($usuario[$camp] == $_POST[$camp]){
+      return true;
+    }
+  }
+}
+function buscarPassEnJson() {
+  $usuarios = file_get_contents("recursos/usuarios.json");
+  $usuariosArray=json_decode($usuarios, true);
+  foreach($usuariosArray as $usuario){
+    if(password_verify($_POST['password'],$usuario['password']){
+      return true;
+    }
+  }
 }
 ?>

@@ -3,15 +3,15 @@ session_start();
 require ("recursos/funciones.php");
 $usuario=[];
 if($_POST){
-  if(validaCampoNomOapellido('name',2)===$_POST['name'] && validaCampoNomOapellido('apellido',2)===$_POST['apellido'] && validarPass()===$_POST['password']){
+  if(comparaInfo(validaCampoNomOapellido('name',2),$_POST['name'])&&comparaInfo(validaCampoNomOapellido('apellido',2),$_POST['apellido'])&& validarPass()===$_POST['password']){
     $usuario['name']=$_POST['name'];
     $usuario['apellido']=$_POST['apellido'];
     $usuario['password']=password_hash($_POST['password'],PASSWORD_DEFAULT);
     $_SESSION=$usuario;
-    header('location: index.php');
+    header('location: login.php');
   }
-  var_dump($usuario);
   subirUsuario($usuario);
+  // var_dump($usuario);
 }
 
 ?>
