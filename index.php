@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $elArray=[
 
 				0 => [
@@ -69,6 +69,7 @@ $elArray=[
 
 								]
 ];
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>

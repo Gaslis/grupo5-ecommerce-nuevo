@@ -1,14 +1,19 @@
 <?PHP
+session_start();
 require ("recursos/funciones.php");
+$usuario=[];
 if($_POST){
-  $usuario = [
-      "nombre" => $_POST['name'],
-      "apellido" => $_POST['apellido'],
-      "email" => $_POST['email'],
-      "password" => password_hash($_POST['password'], PASSWORD_DEFAULT)
-    ];
-    subirUsuario($usuario);
+  if(validaCampoNomOapellido('name',2)===$_POST['name'] && validaCampoNomOapellido('apellido',2)===$_POST['apellido'] && validarPass()===$_POST['password']){
+    $usuario['name']=$_POST['name'];
+    $usuario['apellido']=$_POST['apellido'];
+    $usuario['password']=password_hash($_POST['password'],PASSWORD_DEFAULT);
+    $_SESSION=$usuario;
+    header('location: index.php');
+  }
+  var_dump($usuario);
+  subirUsuario($usuario);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +33,7 @@ if($_POST){
 
             <div class="form-group">
               <label for="formGroupExampleInput"></label>
-              <input type="text" class="form-control" id="formGroupExampleInput" name='name' placeholder="Nombre">
+              <input type="text" class="form-control" id="formGroupExampleInput" name='name' placeholder="nombre">
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput2"></label>
