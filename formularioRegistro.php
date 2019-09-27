@@ -1,19 +1,39 @@
 <?PHP
 session_start();
+
 require ("recursos/funciones.php");
+
 $usuario=[];
+$errors = [];
+
 if($_POST){
-  if(comparaInfo(validaCampoNomOapellido('name',2),$_POST['name'])&&comparaInfo(validaCampoNomOapellido('apellido',2),$_POST['apellido'])&& validarPass()===$_POST['password']){
-    $usuario['name']=$_POST['name'];
-    $usuario['apellido']=$_POST['apellido'];
-    $usuario['password']=password_hash($_POST['password'],PASSWORD_DEFAULT);
-    $_SESSION=$usuario;
+  $usuario = [
+    'name' => $_POST['name'],
+    'apellido' => $_POST['apellido'],
+    'email' => $_POST['email'],
+    'password' => $_POST['password']
+  ];
+  if (is_email($usuario['email'])) {
+    $errors['email'] = 'El email no es valido';
+  }
+  if (min_chars($usuario['apellido'], 3)) {
+    $errors['apellido'] = 'El nombre debe tener al menos 3 caracteres';
+  }
+  if (min_chars($usuario['name'], 3)) {
+    $errors['name'] = 'El nombre debe tener al menos 3 caracteres';
+  }
+  if (strlen($usuario['password']) < 8) {
+    $errors['password'] = 'El password debe tener al menos 3 caracteres';
+  }
+  if ($usuario['password']!=$_POST['confirmar']){
+    $errors['password'] = 'El password no coincide';
+  }
+  if(empty($errors)) {
+    $usuario['password'] = password_hash($usuario['password'], PASSWORD_DEFAULT);
+    subirUsuario($usuario);
     header('location: login.php');
   }
-  subirUsuario($usuario);
-  // var_dump($usuario);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -29,24 +49,28 @@ if($_POST){
 <!-- Cuerpo principal del sitio -->
       <section class="limitesFormu fondoRegistrate" >
         <h1 class="h1-faq  pt-5">REGISTRATE</h1>
-        <form class="m-5 py-3" method='post'>
+        <form class="m-5 py-3" method='post' novalidate>
 
             <div class="form-group">
               <label for="formGroupExampleInput"></label>
-              <input type="text" class="form-control" id="formGroupExampleInput" name='name' placeholder="nombre">
+              <input type="text" class="form-control" id="formGroupExampleInput" name='name' placeholder="nombre" value="<?= $usuario['name'] ?? '' ?>">
+              <p><?= $errors['name'] ?? '' ?></p>
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput2"></label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" name='apellido' placeholder="Apellido">
+              <input type="text" class="form-control" id="formGroupExampleInput2" name='apellido' placeholder="Apellido" value="<?= $usuario['apellido'] ?? '' ?>">
+              <p><?= $errors['apellido'] ?? '' ?></p>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1"></label>
-              <input type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+              <input type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" value="<?= $usuario['email'] ?? '' ?>">
+              <p><?= $errors['email'] ?? '' ?></p>
               <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1"></label>
               <input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <p><?= $errors['password'] ?? '' ?></p>
             </div>
             <!-- <div class="form-group">
               <label for="formGroupExampleInput"></label>
@@ -55,6 +79,7 @@ if($_POST){
             <div class="form-group">
               <label for="exampleInputPassword1"></label>
               <input type="password" name='confirmar' class="form-control" id="exampleInputPassword1" placeholder="Repita el password">
+              <p><?= $errors['confirmar'] ?? '' ?></p>
             </div>
           <!-- <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">

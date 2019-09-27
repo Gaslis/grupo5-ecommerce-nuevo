@@ -1,96 +1,38 @@
 <?php
-function minimoCaracteres($valor,$numCaracteres){
-  if(strlen($valor)>=$numCaracteres){
-    return true;
-  }
-  else {
-    return false;
-  }
+
+function is_email($txt) {
+  return !filter_var($txt, FILTER_VALIDATE_EMAIL);
+}
+
+function min_chars($txt, $num) {
+  return strlen($txt) < $num;
+}
+
+function minimoCaracteres($valor, $numCaracteres){
+  return strlen($valor) >= $numCaracteres;
 }
 
 function estaVacio($dato){
-  if(strlen($dato)===0){
-    return true;
-  }else {
-    return false;
-  }
-}
-
-function comparaInfo($primerDato,$segundoDato){
-  if($primerDato===$segundoDato){
-    return true;
-  }else {
-    return false;
-  }
-}
-
-// Recibe el campo y numero de caracteres minimo se fija si esta vacio o si es menor a $numCaracter
-// Si esta bien, retorna $_POST[$Campo]
-// Si esta mal informa el error mediante $placeCampo
-function validaCampoNomOapellido($Campo,$numCaracter){
-  if(minimoCaracteres($_POST[$Campo],$numCaracter)&& estaVacio($_POST[$Campo])!=true){
-    return $_POST[$Campo];
-  }else{
-    if(minimoCaracteres($_POST[$Campo],2)!=true){
-      $placeCampo='El' . $Campo . 'es muy corto';
-      return $placeCampo;
-    }
-    if(estaVacio($_POST[$Campo])){
-      $placeCampo='El' . $Campo . 'esta vacio';
-      return $placeCampo;
-    }
-  }
-}
-
-function validarPass(){
-  if(estaVacio($_POST['password'])==false &&      estaVacio($_POST['confirmar'])==false && minimoCaracteres($_POST['password'],7) && comparaInfo($_POST['password'],$_POST['confirmar']))
-  {
-    return $_POST['password'];
-  }else{
-    if (estaVacio($_POST['password']))
-    {
-      $placePass = 'El campo esta vacio';
-      return $placePass;
-    }
-    if (estaVacio($_POST['confirmar'])) {
-      $placeConfirmar='El campo esta vacio';
-      return $placeConfirmar;
-    }
-    if (minimoCaracteres($_POST['password'],7)) {
-      $placePass='El password debe tener minimo 8 caracteres';
-      return $placePass;
-    }
-    if(comparaInfo($_POST['password'],$_POST['confirmar'])!=false && estaVacio($_POST['password'])!=true && estaVacio($_POST['confirmar'])!=true){
-      $placeConfirmar='No coincide';
-      return $placeConfirmar;
-    }
-  }
+  return empty($dato);
 }
 
 function subirUsuario($usuarioFunc) {
   $usuarioJson = file_get_contents("recursos/usuarios.json");
   $usuarioJsonArray=json_decode($usuarioJson, true);
-  $usuarioJson[]=$usuarioFunc;
+  $usuarioJsonArray['usuarios'][]=$usuarioFunc;
   $usuariosFinal =json_encode($usuarioJsonArray, JSON_PRETTY_PRINT);
-  file_put_contents("usuarios.json",$usuariosFinal);
+  file_put_contents("recursos/usuarios.json",$usuariosFinal);
 }
 
-function buscarPorCampoEnJson($camp) {
+function verificaYcomparaJSON($txt,$pass) {
   $usuarios = file_get_contents("recursos/usuarios.json");
-  $usuariosArray=json_decode($usuarios, true);
-  foreach($usuariosArray as $usuario){
-    if($usuario[$camp] == $_POST[$camp]){
+  $usuariosArray =json_decode($usuarios, true);
+  foreach($usuariosArray['usuarios'] as $usuario){
+    if($usuario['email'] == $txt && password_verify($pass ,$usuario['password'])){
       return true;
     }
   }
+  return false;
 }
-function buscarPassEnJson() {
-  $usuarios = file_get_contents("recursos/usuarios.json");
-  $usuariosArray=json_decode($usuarios, true);
-  foreach($usuariosArray as $usuario){
-    if(password_verify($_POST['password'],$usuario['password'])){
-      return true;
-    }
-  }
-}
+
 ?>

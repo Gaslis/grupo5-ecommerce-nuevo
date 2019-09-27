@@ -1,3 +1,23 @@
 {
-  "usuarios": []
+    "usuarios": [
+        {
+            "name": "ale",
+            "apellido": "ale",
+            "email": "ale@ale.com.ar",
+            "password": "$2y$10$DrEZ8uTjy0XX1npzFJ\/NouSKPqL\/lh6cq26deFmUq7OQV5NQmHERe"
+        },
+        {
+            "name": "Gaston",
+            "apellido": "lis",
+            "email": "gas@mail.com",
+            "password": "$2y$10$giqdeuNJymg1smGdWAzDHOZGYUtJi\/68YJzBE9c.9DGdIPCCUC8kG",
+            "confirmar": "12345678"
+        },
+        {
+            "name": "juan",
+            "apellido": "perez",
+            "email": "juan@gmail.com",
+            "password": "$2y$10$JLwr\/ZUr8AuBJt\/7jnTm4etTxcA6PLvhrPoRSJOnTEjU13SefKNQS"
+        }
+    ]
 }
