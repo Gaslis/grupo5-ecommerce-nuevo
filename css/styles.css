@@ -199,18 +199,23 @@ footer section article a:hover{
 	margin-right: 15%;
 }
 .fondoRegistrate,
-.fondoLogin{
+.fondoLogin,
+.esiloPerfil{
 	background-color: #eaeaea;
 	border-radius: 10px;
 }
-.limitesLogin{
+.limitesLogin,
+.esiloPerfil{
 	margin-top: 3%;
 	margin-left: 30%;
 	margin-right: 30%;
 }
-.esiloPerfil{
-
-
+/* Perfil */
+main section.esiloPerfil h3{
+	font-size: 20px;
+}
+main section.esiloPerfil p{
+	font-size: 30px;
 }
 /* .cardPadre{
 	position: relative;

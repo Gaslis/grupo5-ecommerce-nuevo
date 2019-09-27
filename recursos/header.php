@@ -29,8 +29,7 @@
     <a href="contacto-consulta.php"><ion-icon name="call"></ion-icon> (011) 15 4054 6753</a>
   </nav>
   <nav class="col-6 segundoNav">
-    
-    <?php if(empty($_SESSION)): ?>
+    <?php if(empty($_SESSION)):?>
       <a href="login.php">Ingresá  <ion-icon name="person"></ion-icon></a>
       <a href="formularioRegistro.php">Registrate  <ion-icon name="create"></ion-icon></a>
     <?php else: ?>

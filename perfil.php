@@ -1,6 +1,12 @@
 <?php
 session_start();
-var_dump($_SESSION);
+// var_dump($_FILES);
+// $nombre=$_FILES['imagen']['name'];
+// $ext=pathinfo($nombre,PATHINFO_EXTENSION);
+// if($ext=='jpg' || $ext=='jpeg'||$ext=='png') {
+//   $archivo=$_FILES['imagen']['tmp_name'];
+//   move_uploaded_file($archivo,"archivos/img." . $ext);
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -10,16 +16,25 @@ var_dump($_SESSION);
       <div class="row">
 <!-- barra de navegacion -->
           <?php include("recursos/header.php");?>
-          <main>
-            <section class="limitesFormu fondoRegistrate p-4">
-              <h2>Tus datos</h2>
-              <h3>Nombre</h3>
-              <p><?=$_SESSION['name']?></p>
-              <h3>Apellido</h3>
-              <p><?=$_SESSION['apellido']?></p>
-              <h3>Email</h3>
-              <p><?=$_SESSION['email']?></p>
-
+          <main class="col-12">
+            <section class="esiloPerfil  p-4">
+              <h2 class="h1-faq">Mis datos</h2>
+              <div class="media">
+                <div class="media-body">
+                  <h3>Nombre</h3>
+                  <p><?=$_SESSION['name']?></p>
+                  <h3>Apellido</h3>
+                  <p><?=$_SESSION['apellido']?></p>
+                  <h3>Email</h3>
+                  <p><?=$_SESSION['email']?></p>
+                  <h3>¿Quiere subir una foto?</h3>
+                </div>
+                <img src="..." class="ml-3" alt="...">
+              </div>
+              <form class="" action="perfil.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="imagen" value="">
+                <input type="submit" name="" value="Enviar">
+              </form>
             </section>
           </main>
           <?php include("recursos/footer.php"); ?>

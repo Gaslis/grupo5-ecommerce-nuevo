@@ -17,6 +17,12 @@
             "apellido": "prueba2",
             "email": "prueba@prueba.com",
             "password": "$2y$10$EiyQJU.1VPIKjE.dRe\/CHOBe599hE\/wWzd7dOTmgwVDKh8VdXPH9i"
+        },
+        {
+            "name": "Gaston",
+            "apellido": "lis",
+            "email": "gas@mail.com",
+            "password": "$2y$10$ZttHz.cHo9k9tZte38Vlk.RFBJ2SxDRM9wV\/cYQGYQjP7vCzQ2m6q"
         }
     ]
 }

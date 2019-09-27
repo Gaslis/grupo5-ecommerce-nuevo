@@ -67,10 +67,34 @@ $elArray=[
 
 								'imagen' => 'img/pen.png',
 
-								]
+							],
+								6 => [
+
+											'id' => 1,
+
+											'titulo' => "Nombre del Producto",
+
+											'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+											'imagen' => 'img/pen2.png',
+
+										],
+
+								7 => [
+
+											'id' => 2,
+
+											'titulo' => "Nombre del Producto",
+
+											'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+
+											'imagen' => 'img/pen3.png',
+
+													],
+								
 ];
 // var_dump($_SESSION);
-var_dump($_COOKIE);
+// var_dump($_COOKIE);
 ?>
 
 <!DOCTYPE html>
