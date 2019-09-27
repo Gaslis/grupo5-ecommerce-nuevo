@@ -193,6 +193,28 @@ footer section article a:hover{
 	padding-right: 30px;
 	margin-left: 43%; /* revisar margin left */
 }
+.botonFormulariologin{
+	text-decoration: none;
+  background-color: red;
+  border: none;
+	color: white;
+	text-align: center;
+	border-radius: 3em;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 36%;
+}
+.botonloginREgi{
+	text-decoration: none;
+  background-color: red;
+  border: none;
+	color: white;
+	text-align: center;
+	border-radius: 3em;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 35%;
+}
 .limitesFormu{
 	margin-top: 3%;
 	margin-left: 15%;

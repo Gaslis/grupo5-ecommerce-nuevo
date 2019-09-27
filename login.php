@@ -30,13 +30,13 @@ if($_POST){
           <h1 class="h1-faq">INGRESAR</h1>
           <form method='post'>
             <div class="form-group " >
-              <label for="exampleInputEmail1">Email</label>
+              <label for="exampleInputEmail1"></label>
               <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=
               "Email">
               <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Contraseña</label>
+              <label for="exampleInputPassword1"></label>
               <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
               <p><?= $mensajeError ?? '' ?></p>
             </div>
@@ -44,9 +44,9 @@ if($_POST){
               <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
               <label class="form-check-label" for="exampleCheck1">Recordarme</label>
             </div>
-            <button type="submit" class="btn btn-primary-login botonFormulario">INGRESAR</button>
+            <button type="submit" class="btn btn-primary-login botonFormulariologin">INGRESAR</button>
             <small id="emailHelp" class="form-text text-muted">NO SOS UN USUARIO REGISTRADO?</small>
-            <button type="submit" class="btn btn-primary-login botonFormulario">REGISTRATE</button>
+            <button type="submit" class="btn btn-primary-login botonloginREgi">REGISTRATE</button>
           </form>
         </section>
       </main>

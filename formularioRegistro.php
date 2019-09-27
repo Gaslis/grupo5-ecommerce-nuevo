@@ -23,7 +23,7 @@ if($_POST){
     $errors['name'] = 'El nombre debe tener al menos 3 caracteres';
   }
   if (strlen($usuario['password']) < 8) {
-    $errors['password'] = 'El password debe tener al menos 3 caracteres';
+    $errors['password'] = 'El password debe tener al menos 8 caracteres';
   }
   if ($usuario['password']!=$_POST['confirmar']){
     $errors['password'] = 'El password no coincide';
@@ -53,7 +53,7 @@ if($_POST){
 
             <div class="form-group">
               <label for="formGroupExampleInput"></label>
-              <input type="text" class="form-control" id="formGroupExampleInput" name='name' placeholder="nombre" value="<?= $usuario['name'] ?? '' ?>">
+              <input type="text" class="form-control" id="formGroupExampleInput" name='name' placeholder="Nombre" value="<?= $usuario['name'] ?? '' ?>">
               <p><?= $errors['name'] ?? '' ?></p>
             </div>
             <div class="form-group">
@@ -69,7 +69,7 @@ if($_POST){
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1"></label>
-              <input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="Password   --debe tener al menos 8 caracteres--">
               <p><?= $errors['password'] ?? '' ?></p>
             </div>
             <!-- <div class="form-group">
