@@ -23,6 +23,12 @@
             "apellido": "lis",
             "email": "gas@mail.com",
             "password": "$2y$10$ZttHz.cHo9k9tZte38Vlk.RFBJ2SxDRM9wV\/cYQGYQjP7vCzQ2m6q"
+        },
+        {
+            "name": "rodrigo",
+            "apellido": "julia",
+            "email": "rodrigonjulia@gmail.com",
+            "password": "$2y$10$d4DQqIf4S23xgMHwxM0fZOHbBHiRaM9g9YWranOt420qOSTzxRONG"
         }
     ]
 }

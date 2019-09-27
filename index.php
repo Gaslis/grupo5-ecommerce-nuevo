@@ -7,7 +7,7 @@ $elArray=[
 
                 'titulo' => "Nombre del Producto",
 
-                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+                'descripcion' => 'Lorem ipsum dolor sit amet',
 
                 'imagen' => 'img/pen2.png',
               ],
@@ -18,7 +18,7 @@ $elArray=[
 
                 'titulo' => "Nombre del Producto",
 
-                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+                'descripcion' => 'Lorem ipsum dolor sit amet',
 
                 'imagen' => 'img/pen3.png',
 
@@ -29,7 +29,7 @@ $elArray=[
 
                 'titulo' => "Nombre del Producto",
 
-                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+                'descripcion' => 'Lorem ipsum dolor sit amet',
 
                 'imagen' => 'img/pen.png',
 
@@ -40,7 +40,7 @@ $elArray=[
 
 								'titulo' => "Nombre del Producto",
 
-								'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+								'descripcion' => 'Lorem ipsum dolor sit amet',
 
 								'imagen' => 'img/pen2.png',
 
@@ -52,8 +52,7 @@ $elArray=[
 
 								'titulo' => "Nombre del Producto",
 
-								'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
-
+								'descripcion' => 'Lorem ipsum dolor sit amet',
 								'imagen' => 'img/pen3.png',
 
 										],
@@ -63,7 +62,7 @@ $elArray=[
 
 								'titulo' => "Nombre del Producto",
 
-								'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+								'descripcion' => 'Lorem ipsum dolor sit amet',
 
 								'imagen' => 'img/pen.png',
 
@@ -74,7 +73,7 @@ $elArray=[
 
 											'titulo' => "Nombre del Producto",
 
-											'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+											'descripcion' => 'Lorem ipsum dolor sit amet',
 
 											'imagen' => 'img/pen2.png',
 
@@ -86,12 +85,12 @@ $elArray=[
 
 											'titulo' => "Nombre del Producto",
 
-											'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.',
+											'descripcion' => 'Lorem ipsum dolor sit amet',
 
 											'imagen' => 'img/pen3.png',
 
 													],
-								
+
 ];
 // var_dump($_SESSION);
 // var_dump($_COOKIE);
@@ -146,7 +145,7 @@ $elArray=[
                   <div class="card-body">
                     <h5 class="card-title"><?=$articulos['titulo'];?></h5>
                     <p class="card-text"><?=$articulos['descripcion'];?></p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="pagina-producto.php" class="btn btn-primary">Ver más</a>
                   </div>
                 </div>
               <?php endforeach; ?>
