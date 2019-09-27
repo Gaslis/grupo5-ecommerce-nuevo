@@ -7,17 +7,16 @@
             "password": "$2y$10$DrEZ8uTjy0XX1npzFJ\/NouSKPqL\/lh6cq26deFmUq7OQV5NQmHERe"
         },
         {
-            "name": "Gaston",
-            "apellido": "lis",
-            "email": "gas@mail.com",
-            "password": "$2y$10$giqdeuNJymg1smGdWAzDHOZGYUtJi\/68YJzBE9c.9DGdIPCCUC8kG",
-            "confirmar": "12345678"
-        },
-        {
             "name": "juan",
             "apellido": "perez",
             "email": "juan@gmail.com",
             "password": "$2y$10$JLwr\/ZUr8AuBJt\/7jnTm4etTxcA6PLvhrPoRSJOnTEjU13SefKNQS"
+        },
+        {
+            "name": "prueba",
+            "apellido": "prueba2",
+            "email": "prueba@prueba.com",
+            "password": "$2y$10$EiyQJU.1VPIKjE.dRe\/CHOBe599hE\/wWzd7dOTmgwVDKh8VdXPH9i"
         }
     ]
 }

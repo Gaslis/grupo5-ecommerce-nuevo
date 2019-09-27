@@ -25,12 +25,17 @@
 </nav>
 <div class="row barraRoja py-1">
   <nav class="col-6 primerNav">
-    <a href=""><ion-icon name="mail"></ion-icon> contacto@graficar.com</a>
-    <a href="contacto-consulta.php"><ion-icon name="call"></ion-icon> (011) 4822 7255</a>
+    <a href="mailto: info@graficar.com.ar"><ion-icon name="mail"></ion-icon> contacto@graficar.com</a>
+    <a href="contacto-consulta.php"><ion-icon name="call"></ion-icon> (011) 15 4054 6753</a>
   </nav>
   <nav class="col-6 segundoNav">
-    <a href="login.php">Ingresá  <ion-icon name="person"></ion-icon></a>
-    <a href="formularioRegistro.php">Registrate  <ion-icon name="create"></ion-icon></a>
+    <?php if(empty($_SESSION)): ?>
+      <a href="login.php">Ingresá  <ion-icon name="person"></ion-icon></a>
+      <a href="formularioRegistro.php">Registrate  <ion-icon name="create"></ion-icon></a>
+    <?php else: ?>
+      <a href="perfil.php"><?=$_SESSION['name']?>  <ion-icon name="person"></ion-icon></a>
+      <a href="logout.php">Logout  <ion-icon name="exit"></ion-icon></a>
+  <?php endif; ?>
   </nav>
 </div>
 </div>

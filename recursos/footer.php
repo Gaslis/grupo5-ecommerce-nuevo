@@ -29,8 +29,8 @@
     </article>
     <article class="col-12 col-sm-4 col-md-4 mb-5">
       <h4>Contacto</h4>
-      <a href="#"><ion-icon name="mail" class="achicarIconos"></ion-icon> contacto@graficar.com</ion-icon></a><br>
-       <a href="#"> <ion-icon name="logo-whatsapp" class="achicarIconos"></ion-icon> +54 (11) 5219 0469</a><br>
+      <a href="mailto: info@graficar.com.ar"><ion-icon name="mail" class="achicarIconos"></ion-icon> contacto@graficar.com</ion-icon></a><br>
+       <a href="#"> <ion-icon name="logo-whatsapp" class="achicarIconos"></ion-icon> (011) 15 4054 6753</a><br>
       <span>Horario: Lunes a Viernes 9 a 18 hs.</span><br>
     </article>
     <article class="col-12 col-sm-4 col-md-4">

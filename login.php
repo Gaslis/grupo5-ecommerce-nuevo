@@ -6,7 +6,6 @@ require ("recursos/funciones.php");
 if($_POST){
   if(verificaYcomparaJSON($_POST['email'],$_POST['password']))
   {
-    $_SESSION=$_POST;
     header('location: index.php');
   }else{
     $mensajeError='Alguno de los campos es incorrecto.';

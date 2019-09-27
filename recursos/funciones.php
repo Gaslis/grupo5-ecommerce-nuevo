@@ -29,6 +29,7 @@ function verificaYcomparaJSON($txt,$pass) {
   $usuariosArray =json_decode($usuarios, true);
   foreach($usuariosArray['usuarios'] as $usuario){
     if($usuario['email'] == $txt && password_verify($pass ,$usuario['password'])){
+      $_SESSION=$usuario;
       return true;
     }
   }
