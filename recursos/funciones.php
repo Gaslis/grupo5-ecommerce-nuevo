@@ -36,4 +36,16 @@ function verificaYcomparaJSON($txt,$pass) {
   return false;
 }
 
+function verificaYcomparaJSONemail($email) {
+  $usuarios = file_get_contents("recursos/usuarios.json");
+  $usuariosArray =json_decode($usuarios, true);
+  foreach($usuariosArray['usuarios'] as $usuario){
+    if($usuario['email'] == $email){
+      $_SESSION=$usuario;
+      return true;
+    }
+  }
+  return false;
+}
+
 ?>

@@ -6,6 +6,9 @@ require ("recursos/funciones.php");
 if($_POST){
   if(verificaYcomparaJSON($_POST['email'],$_POST['password']))
   {
+    if(isset($_POST['check'])){
+      setcookie('user_logged', $_POST['email'], time() +3600);
+    }
     header('location: index.php');
   }else{
     $mensajeError='Alguno de los campos es incorrecto.';
@@ -38,8 +41,8 @@ if($_POST){
               <p><?= $mensajeError ?? '' ?></p>
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+              <label class="form-check-label" for="exampleCheck1">Recordarme</label>
             </div>
             <button type="submit" class="btn btn-primary-login botonFormulario">INGRESAR</button>
             <small id="emailHelp" class="form-text text-muted">NO SOS UN USUARIO REGISTRADO?</small>

@@ -8,11 +8,20 @@ var_dump($_SESSION);
   <body>
     <div class="contaniner-fluid">
       <div class="row">
-
-
 <!-- barra de navegacion -->
           <?php include("recursos/header.php");?>
+          <main>
+            <section class="limitesFormu fondoRegistrate p-4">
+              <h2>Tus datos</h2>
+              <h3>Nombre</h3>
+              <p><?=$_SESSION['name']?></p>
+              <h3>Apellido</h3>
+              <p><?=$_SESSION['apellido']?></p>
+              <h3>Email</h3>
+              <p><?=$_SESSION['email']?></p>
 
+            </section>
+          </main>
           <?php include("recursos/footer.php"); ?>
       </div>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
