@@ -11,36 +11,7 @@ session_start();
         <?php include("recursos/header.php"); ?>
 
           <main class="row pl-5 pr-5">
-            <aside class="col-sm-3 col-md-3 mt-5">
-              <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn btn-secondary">Novedades</button>
-                <button type="button" class="btn btn-secondary">Lápices</button>
-                  <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Boligrafos
-                    </button>
-                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="#">Plásticos</a>
-                        <a class="dropdown-item" href="#">Metálicos</a>
-                      </div>
-                    </div>
-                    <button type="button" class="btn btn-secondary">Novedades</button>
-                    <button type="button" class="btn btn-secondary">Lápices</button>
-                    <button type="button" class="btn btn-secondary">Novedades</button>
-                    <button type="button" class="btn btn-secondary">Lápices</button>
-                    <div class="btn-group" role="group">
-                      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Boligrafos
-                      </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                          <a class="dropdown-item" href="#">Plásticos</a>
-                          <a class="dropdown-item" href="#">Metálicos</a>
-                        </div>
-                      </div>
-                      <button type="button" class="btn btn-secondary">Lápices</button>
-                      <button type="button" class="btn btn-secondary">Novedades</button>
-                  </div>
-              </aside>
+            <?php include("recursos/aside.php"); ?>
 
 
 
@@ -135,6 +106,7 @@ session_start();
 
 
         </main>
+        <?php include("recursos/informacion.php"); ?>
         <?php include("recursos/footer.php"); ?>
       </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
