@@ -6,7 +6,7 @@ require ("recursos/funciones.php");
 if($_POST){
   if(verificaYcomparaJSON($_POST['email'],$_POST['password']))
   {
-    if(isset($_POST['check'])){
+    if(isset($_POST['remember'])){
       setcookie('user_logged', $_POST['email'], time() +3600);
     }
     header('location: index.php');
@@ -41,7 +41,7 @@ if($_POST){
               <p><?= $mensajeError ?? '' ?></p>
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
               <label class="form-check-label" for="exampleCheck1">Recordarme</label>
             </div>
             <button type="submit" class="btn btn-primary-login botonFormulariologin">INGRESAR</button>

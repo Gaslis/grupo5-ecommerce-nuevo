@@ -1,5 +1,12 @@
 <?php
 
+function upload_file($file,$dir='uploads'){
+  $ext=pathinfo($file['name'],PATHINFO_EXTENSION);
+  if($ext=='jpg' || $ext=='jpeg'||$ext=='png') {
+    $nom=md5(microtime());
+    move_uploaded_file($file['tmp_name'],$dir . "/" . $nom . "." . $ext);
+  }
+}
 function is_email($txt) {
   return !filter_var($txt, FILTER_VALIDATE_EMAIL);
 }

@@ -1,12 +1,9 @@
 <?php
 session_start();
-// var_dump($_FILES);
-// $nombre=$_FILES['imagen']['name'];
-// $ext=pathinfo($nombre,PATHINFO_EXTENSION);
-// if($ext=='jpg' || $ext=='jpeg'||$ext=='png') {
-//   $archivo=$_FILES['imagen']['tmp_name'];
-//   move_uploaded_file($archivo,"archivos/img." . $ext);
-// }
+require ("recursos/funciones.php");
+if($_FILES){
+  upload_file($_FILES['imagen']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
